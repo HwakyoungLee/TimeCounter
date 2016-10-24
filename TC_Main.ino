@@ -6,15 +6,15 @@ int UpdateTime = 0;
 void loop() {
   boolean  bval = false;
   
-  bval = !digitalRead(SET_BUTTON);
+  bval = !digitalRead(START_BUTTON);
   if (bval) {
-    ResetTime();
+    resetTime();
   }
 
   UpdateTime = UpdateTime + 1;
   if (UpdateTime > 2000)
   {
-    CheckTime();
+    checkTime();
     UpdateTime = 0;
   }
 

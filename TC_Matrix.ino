@@ -24,7 +24,7 @@ volatile uint8_t LEDMAT[20];
 
 // PORTB 0 to 6 = ROWS 1 to 7
 
-void LEDupdate()                                                  
+void updateLED()                                                  
 {
   if (ROWBITINDEX > 6) {
     ROWBITINDEX = 0;

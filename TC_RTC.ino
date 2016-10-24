@@ -3,10 +3,8 @@
 //*******************************************************************************************************************
 uint8_t i2cData = 0;
 
-void CheckTime()
+void checkTime()
 {
-  uint8_t temp = 0;
-
   I2C_RX(RTCDS1337, RTC_SEC);
   SecOnes = i2cData & B00001111;                  
   SecTens = i2cData & B01110000;                  
@@ -23,7 +21,7 @@ void CheckTime()
   HourTens = HourTens >> 4;
 }
 
-void ResetTime()
+void resetTime()
 {
   I2C_TX(RTCDS1337, RTC_HOUR, 0);
   I2C_TX(RTCDS1337, RTC_MIN, 0);

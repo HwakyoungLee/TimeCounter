@@ -16,9 +16,9 @@ uint8_t SecOnes = 0;
 // Constants
 // Buttons
 #define BUTTON1         2
-#define START_BUTTON    BUTTON1
+#define SLEEP_BUTTON    BUTTON1
 #define BUTTON2         3
-#define SET_BUTTON      BUTTON2
+#define START_BUTTON    BUTTON2
 
 // DS1337+ Address locations
 #define RTCDS1337 B01101000   // was B11010000  

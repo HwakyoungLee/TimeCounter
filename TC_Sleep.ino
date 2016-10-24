@@ -1,9 +1,6 @@
 //*******************************************************************************************************************
 //                                                  Enter Sleep Mode
 //*******************************************************************************************************************
-
-unsigned long SleepTimer;
-
 void GoToSleep()
 {
   //  SLEEP_MODE_EXT_STANDBY
@@ -54,11 +51,7 @@ void GoToSleep()
 
   //    displayString("Wake");
   //    delay(1000);
-  //    clearmatrix();
-
-  SleepTimer = millis();
-
-
+  //    clearMatrix();
 }
 
 //*******************************************************************************************************************
@@ -66,8 +59,7 @@ void GoToSleep()
 //*******************************************************************************************************************
 void UltraPowerDown(boolean onoff)
 {
-  if (onoff)                                                   // True = full power mode = ON
-  {
+  if (onoff) {                                                  // True = full power mode = ON
     //  pinMode(4, OUTPUT);                                      // DeMux A
     //  pinMode(5, OUTPUT);                                      // DeMux B
     //  pinMode(6, OUTPUT);                                      // DeMux C
@@ -78,9 +70,8 @@ void UltraPowerDown(boolean onoff)
     power_timer2_enable();                                       // Seems required for tone (crashes without)
 
     power_twi_enable();
-  }
-  else                                                        // False is LOW Power mode
-  {
+  } else {                                                      
+    // False is LOW Power mode
     // LED MATRIX
     //
     // Port C: C0 to C3 set to high. Columns 17 to 20 of LED matrix - Cathode connection
@@ -131,9 +122,4 @@ void MinuteUP()
 
   }
 */
-
-void ResetSleepCount()
-{
-  SleepTimer = millis();
-}
 

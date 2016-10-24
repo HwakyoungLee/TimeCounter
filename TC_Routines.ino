@@ -9,14 +9,14 @@ void beepsound(int freq, int freqlenght)
 {
   // freq was 4000
   // freqlenght was 100
-  pinMode(SET_BUTTON, OUTPUT);
-  tone(SET_BUTTON, freq, freqlenght);
+  pinMode(START_BUTTON, OUTPUT);
+  tone(START_BUTTON, freq, freqlenght);
   delay(freqlenght);
-  noTone(SET_BUTTON);
-  digitalWrite(SET_BUTTON, HIGH);
+  noTone(START_BUTTON);
+  digitalWrite(START_BUTTON, HIGH);
 
-  pinMode(SET_BUTTON, INPUT_PULLUP);
-  //  digitalWrite(SETBUTTON, HIGH);
+  pinMode(START_BUTTON, INPUT_PULLUP);
+  //  digitalWrite(START_BUTTON, HIGH);
 }
 
 //*******************************************************************************************************************
@@ -38,7 +38,7 @@ void displayString(char outText[])
 //*******************************************************************************************************************
 //                                                 Clear LED Matrix
 //*******************************************************************************************************************
-void clearmatrix()
+void clearMatrix()
 {
   for (int i = 0; i < 20; i++) {
     LEDMAT[i] = 0;

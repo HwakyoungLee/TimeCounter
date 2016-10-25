@@ -1,8 +1,5 @@
-#define blinkTime  500
-
-boolean blinkON = false;
 int UpdateTime = 0;
-boolean sleeping = true;
+boolean sleeping = false;
 
 void loop() {
   boolean  bval;
@@ -13,11 +10,11 @@ void loop() {
     resetTime();
   }
 
-  bval = !digitalRead(SLEEP_BUTTON);
-  if (bval) {
-    sleeping = true;
-    clearMatrix();
-  }
+//  bval = !digitalRead(SLEEP_BUTTON);
+//  if (bval) {
+//    sleeping = true;
+//    clearMatrix();
+//  }
 
   if (!sleeping) {
     UpdateTime = UpdateTime + 1;
@@ -25,6 +22,8 @@ void loop() {
       checkTime();
       UpdateTime = 0;
     }
+
+    showColon = (SecOnes % 2 == 0);
     writeTime(HourTens, HourOnes, MinTens, MinOnes);
   }
 }

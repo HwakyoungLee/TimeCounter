@@ -54,7 +54,6 @@ void updateLED()
   } else {
     PORTB = (PORTB & B10000000);
     if (bitRead(LEDMAT[Mcolumn], ROWBITINDEX)) {
-      //      PORTB = (PORTB & B10000000);
       bitSet(PORTB, ROWBITINDEX);
     }
 

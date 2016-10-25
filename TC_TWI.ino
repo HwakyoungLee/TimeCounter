@@ -9,8 +9,10 @@ void I2C_TX(byte device, byte regadd, byte tx_data)                             
   Wire.endTransmission();
 }
 
-void I2C_RX(byte devicerx, byte regaddrx)                                       // Receive I2C Data
+uint8_t I2C_RX(byte devicerx, byte regaddrx)                                       // Receive I2C Data
 {
+  uint8_t i2cData = 0;
+  
   Wire.beginTransmission(devicerx);
   Wire.write(regaddrx);
   Wire.endTransmission();
@@ -20,5 +22,7 @@ void I2C_RX(byte devicerx, byte regaddrx)                                       
   if (Wire.available()) {
     i2cData = Wire.read();
   }
+  
+  return i2cData;
 }
 
